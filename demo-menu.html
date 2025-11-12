@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo del Menú Mejorado - Cerradura Smart RFID-BT</title>
+    <link rel="icon" href="https://placehold.co/32x32.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS del Menú Mejorado -->
+    <link rel="stylesheet" href="CSS/menu.css">
+    
+    <style>
+        /* Estilos adicionales para la demo */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .btn-custom {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .checklist li i {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- MENÚ DE NAVEGACIÓN MEJORADO -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-shield-lock"></i>
+                <span>Cerradura Smart RFID-BT</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="avanze.html">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span>Avances</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <span>Información</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#introduccion">
+                                    <i class="bi bi-book"></i>
+                                    Introducción
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#caracteristicas">
+                                    <i class="bi bi-star"></i>
+                                    Características
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#instalacion">
+                                    <i class="bi bi-download"></i>
+                                    Instalación
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#personalizacion">
+                                    <i class="bi bi-palette"></i>
+                                    Personalización
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentacion_tecnica.md" target="_blank">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>Documentación</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html">
+                            <i class="bi bi-gear-fill"></i>
+                            <span>Administración</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="container">
+        <h1><i class="bi bi-menu-button-wide"></i> Menú de Navegación Mejorado</h1>
+        <p class="lead">Un menú moderno, responsivo y con todas las funcionalidades que necesitas</p>
+        <div class="mt-4">
+            <a href="#caracteristicas" class="btn btn-light btn-custom me-2">
+                <i class="bi bi-star"></i> Ver Características
+            </a>
+            <a href="#instalacion" class="btn btn-outline-light btn-custom">
+                <i class="bi bi-download"></i> Instrucciones
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CARACTERÍSTICAS -->
+<section id="caracteristicas" class="container">
+    <div class="demo-section">
+        <h2 class="text-center mb-4"><i class="bi bi-star-fill text-warning"></i> Características Principales</h2>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="bi bi-phone feature-icon"></i>
+                    <h4>Totalmente Responsivo</h4>
+                    <p>Se adapta perfectamente a cualquier dispositivo: móvil, tablet o desktop.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="bi bi-lightning-charge feature-icon"></i>
+                    <h4>Animaciones Suaves</h4>
+                    <p>Transiciones y efectos modernos que mejoran la experiencia del usuario.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="bi bi-universal-access feature-icon"></i>
+                    <h4>Accesible</h4>
+                    <p>Navegación por teclado, atributos ARIA y alto contraste.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="bi bi-palette feature-icon"></i>
+                    <h4>Personalizable</h4>
+                    <p>Cambia fácilmente los colores con variables CSS.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="bi bi-speedometer2 feature-icon"></i>
+                    <h4>Rápido y Ligero</h4>
+                    <p>Optimizado para carga rápida sin sacrificar funcionalidad.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="bi bi-code-square feature-icon"></i>
+                    <h4>Fácil de Implementar</h4>
+                    <p>Solo copia y pega el código en tus páginas HTML.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTRODUCCIÓN -->
+<section id="introduccion" class="container">
+    <div class="demo-section">
+        <h2><i class="bi bi-book"></i> Introducción</h2>
+        <p class="lead">Este menú mejorado ha sido diseñado específicamente para el proyecto <strong>Cerradura Smart RFID-BT</strong>.</p>
+        
+        <h4 class="mt-4">¿Qué incluye?</h4>
+        <ul class="checklist">
+            <li><i class="bi bi-check-circle-fill"></i> Archivo CSS con estilos modernos (<code>CSS/menu.css</code>)</li>
+            <li><i class="bi bi-check-circle-fill"></i> Archivo JavaScript con funcionalidades (<code>Javascript/menu.js</code>)</li>
+            <li><i class="bi bi-check-circle-fill"></i> Componente HTML listo para usar (<code>menu-component.html</code>)</li>
+            <li><i class="bi bi-check-circle-fill"></i> Instrucciones detalladas (<code>INSTRUCCIONES_MENU.md</code>)</li>
+            <li><i class="bi bi-check-circle-fill"></i> Archivo de demostración (<code>demo-menu.html</code>)</li>
+        </ul>
+        
+        <h4 class="mt-4">Funcionalidades JavaScript</h4>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <ul>
+                    <li>✨ Efecto de scroll en el navbar</li>
+                    <li>✨ Cierre automático del menú móvil</li>
+                    <li>✨ Marcado de página activa</li>
+                    <li>✨ Smooth scroll para enlaces internos</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>✨ Animaciones de dropdown</li>
+                    <li>✨ Navegación por teclado (ESC)</li>
+                    <li>✨ Resaltado de sección actual</li>
+                    <li>✨ Animación de entrada de items</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INSTALACIÓN -->
+<section id="instalacion" class="container">
+    <div class="demo-section">
+        <h2><i class="bi bi-download"></i> Instalación</h2>
+        
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle"></i> <strong>Nota:</strong> Los archivos ya están creados en tu proyecto. Solo necesitas agregarlos a tus páginas HTML.
+        </div>
+        
+        <h4>Paso 1: Agregar CSS</h4>
+        <p>En el <code>&lt;head&gt;</code> de tus páginas HTML:</p>
+        <div class="code-block">
+            <code>&lt;!-- Bootstrap CSS --&gt;<br>
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
+&lt;!-- Bootstrap Icons --&gt;<br>
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"&gt;<br>
+<br>
+<span style="color: #f39c12;">&lt;!-- ⭐ Menú Mejorado ⭐ --&gt;</span><br>
+<span style="color: #2ecc71;">&lt;link rel="stylesheet" href="CSS/menu.css"&gt;</span></code>
+        </div>
+        
+        <h4 class="mt-4">Paso 2: Agregar JavaScript</h4>
+        <p>Antes de cerrar <code>&lt;/body&gt;</code>:</p>
+        <div class="code-block">
+            <code>&lt;!-- Bootstrap JS --&gt;<br>
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;<br>
+<br>
+<span style="color: #f39c12;">&lt;!-- ⭐ Menú Mejorado ⭐ --&gt;</span><br>
+<span style="color: #2ecc71;">&lt;script src="Javascript/menu.js"&gt;&lt;/script&gt;</span></code>
+        </div>
+        
+        <h4 class="mt-4">Paso 3: Reemplazar el Header</h4>
+        <p>Copia el código del <code>&lt;header&gt;</code> desde <code>menu-component.html</code> y reemplázalo en:</p>
+        <ul>
+            <li>✅ <code>index.html</code></li>
+            <li>✅ <code>avanze.html</code></li>
+            <li>✅ <code>inicio.html</code></li>
+        </ul>
+        
+        <div class="alert alert-success mt-4">
+            <i class="bi bi-check-circle"></i> <strong>¡Listo!</strong> Tu menú mejorado está funcionando.
+        </div>
+    </div>
+</section>
+
+<!-- PERSONALIZACIÓN -->
+<section id="personalizacion" class="container">
+    <div class="demo-section">
+        <h2><i class="bi bi-palette"></i> Personalización de Colores</h2>
+        
+        <p>Puedes cambiar fácilmente los colores del menú editando las variables CSS en <code>CSS/menu.css</code>:</p>
+        
+        <h4 class="mt-4">Colores Actuales</h4>
+        <div class="color-palette">
+            <div class="color-box" style="background-color: #2c3e50;">
+                <div>
+                    <div>Primary</div>
+                    <small>#2c3e50</small>
+                </div>
+            </div>
+            <div class="color-box" style="background-color: #3498db;">
+                <div>
+                    <div>Secondary</div>
+                    <small>#3498db</small>
+                </div>
+            </div>
+            <div class="color-box" style="background-color: #e74c3c;">
+                <div>
+                    <div>Accent</div>
+                    <small>#e74c3c</small>
+                </div>
+            </div>
+            <div class="color-box" style="background-color: #34495e;">
+                <div>
+                    <div>Hover</div>
+                    <small>#34495e</small>
+                </div>
+            </div>
+        </div>
+        
+        <h4 class="mt-4">Código para Personalizar</h4>
+        <div class="code-block">
+            <code>:root {<br>
+    <span style="color: #3498db;">--primary-color</span>: <span style="color: #e74c3c;">#2c3e50</span>;      <span style="color: #95a5a6;">/* Color principal */</span><br>
+    <span style="color: #3498db;">--secondary-color</span>: <span style="color: #e74c3c;">#3498db</span>;    <span style="color: #95a5a6;">/* Color secundario */</span><br>
+    <span style="color: #3498db;">--accent-color</span>: <span style="color: #e74c3c;">#e74c3c</span>;       <span style="color: #95a5a6;">/* Color de acento */</span><br>
+    <span style="color: #3498db;">--text-light</span>: <span style="color: #e74c3c;">#ecf0f1</span>;         <span style="color: #95a5a6;">/* Texto claro */</span><br>
+    <span style="color: #3498db;">--hover-bg</span>: <span style="color: #e74c3c;">#34495e</span>;           <span style="color: #95a5a6;">/* Fondo al hover */</span><br>
+}</code>
+        </div>
+        
+        <h4 class="mt-4">Ejemplos de Paletas</h4>
+        
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <strong>Azul Profesional</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="color-palette">
+                            <div class="color-box" style="background-color: #1e3a8a; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#1e3a8a</small>
+                            </div>
+                            <div class="color-box" style="background-color: #3b82f6; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#3b82f6</small>
+                            </div>
+                            <div class="color-box" style="background-color: #ef4444; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#ef4444</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <strong>Verde Moderno</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="color-palette">
+                            <div class="color-box" style="background-color: #065f46; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#065f46</small>
+                            </div>
+                            <div class="color-box" style="background-color: #10b981; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#10b981</small>
+                            </div>
+                            <div class="color-box" style="background-color: #f59e0b; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#f59e0b</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header" style="background-color: #8b5cf6; color: white;">
+                        <strong>Morado Elegante</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="color-palette">
+                            <div class="color-box" style="background-color: #5b21b6; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#5b21b6</small>
+                            </div>
+                            <div class="color-box" style="background-color: #8b5cf6; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#8b5cf6</small>
+                            </div>
+                            <div class="color-box" style="background-color: #ec4899; width: 60px; height: 60px; font-size: 0.7rem;">
+                                <small>#ec4899</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ARCHIVOS GENERADOS -->
+<section class="container mb-5">
+    <div class="demo-section">
+        <h2><i class="bi bi-folder"></i> Archivos Generados</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Archivo</th>
+                        <th>Descripción</th>
+                        <th>Ubicación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>menu.css</code></td>
+                        <td>Estilos del menú con animaciones y efectos</td>
+                        <td><code>CSS/menu.css</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>menu.js</code></td>
+                        <td>Funcionalidades JavaScript del menú</td>
+                        <td><code>Javascript/menu.js</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>menu-component.html</code></td>
+                        <td>Componente HTML del menú (referencia)</td>
+                        <td><code>menu-component.html</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>INSTRUCCIONES_MENU.md</code></td>
+                        <td>Instrucciones detalladas de instalación</td>
+                        <td><code>INSTRUCCIONES_MENU.md</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>demo-menu.html</code></td>
+                        <td>Esta página de demostración</td>
+                        <td><code>demo-menu.html</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="alert alert-warning mt-4">
+            <i class="bi bi-exclamation-triangle"></i> <strong>Importante:</strong> No olvides agregar los archivos CSS y JS a TODAS tus páginas HTML.
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container text-center">
+        <p class="mb-2"><i class="bi bi-shield-lock"></i> <strong>Cerradura Smart RFID-BT</strong></p>
+        <p class="mb-0">&copy; 2024 Todos los derechos reservados.</p>
+        <p class="mt-3">
+            <a href="index.html" class="text-white me-3"><i class="bi bi-house"></i> Inicio</a>
+            <a href="avanze.html" class="text-white me-3"><i class="bi bi-graph-up"></i> Avances</a>
+            <a href="inicio.html" class="text-white"><i class="bi bi-gear"></i> Administración</a>
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script del Menú -->
+<script src="Javascript/menu.js"></script>
+
+</body>
+</html>

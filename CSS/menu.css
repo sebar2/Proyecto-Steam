@@ -1,0 +1,368 @@
+/* ============================================
+   ESTILOS DEL MENÚ DE NAVEGACIÓN MEJORADO
+   Cerradura Smart RFID-BT
+   ============================================ */
+
+/* Variables CSS para colores y estilos */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --hover-bg: #34495e;
+    --dropdown-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset y estilos base del header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--hover-bg) 100%);
+    box-shadow: var(--shadow);
+}
+
+/* Navbar principal */
+.navbar {
+    padding: 1rem 0;
+    background: transparent !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-light) !important;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand:hover {
+    color: var(--secondary-color) !important;
+    transform: scale(1.05);
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Botón del menú móvil */
+.navbar-toggler {
+    border: 2px solid var(--text-light);
+    padding: 0.5rem 0.75rem;
+    transition: var(--transition);
+}
+
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28236, 240, 241, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Items del menú */
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover {
+    background-color: var(--hover-bg);
+    color: var(--secondary-color) !important;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: var(--secondary-color);
+    color: white !important;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background-color: var(--dropdown-bg);
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    color: var(--text-dark);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+.dropdown-item i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Dropdown toggle */
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+    transition: var(--transition);
+}
+
+.dropdown.show .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+/* Separador en el dropdown */
+.dropdown-divider {
+    margin: 0.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el menú de administración */
+.navbar-nav:last-child .nav-link {
+    background-color: rgba(231, 76, 60, 0.2);
+    border: 1px solid var(--accent-color);
+}
+
+.navbar-nav:last-child .nav-link:hover {
+    background-color: var(--accent-color);
+    color: white !important;
+}
+
+/* Indicador de página activa */
+.nav-item.active .nav-link {
+    position: relative;
+}
+
+.nav-item.active .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Responsive - Móvil */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(44, 62, 80, 0.98);
+        padding: 1rem;
+        border-radius: 0.75rem;
+        margin-top: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-link {
+        margin: 0.25rem 0;
+    }
+
+    .dropdown-menu {
+        background-color: rgba(52, 73, 94, 0.95);
+        border-left: 3px solid var(--secondary-color);
+        margin-left: 1rem;
+    }
+
+    .dropdown-item {
+        color: var(--text-light);
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--hover-bg);
+    }
+
+    .navbar-nav:last-child {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Animación de entrada para el menú móvil */
+@media (max-width: 991.98px) {
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        animation: fadeIn 0.3s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de scroll en el navbar */
+.navbar-scrolled {
+    background: var(--primary-color) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge para notificaciones (opcional) */
+.nav-link .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    background-color: var(--accent-color);
+    border-radius: 1rem;
+}
+
+/* Breadcrumb (opcional para navegación adicional) */
+.breadcrumb-nav {
+    background-color: rgba(236, 240, 241, 0.1);
+    padding: 0.75rem 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.breadcrumb-item {
+    color: var(--text-light);
+}
+
+.breadcrumb-item.active {
+    color: var(--secondary-color);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--text-light);
+    content: "›";
+}
+
+/* Accesibilidad - Focus visible */
+.nav-link:focus,
+.dropdown-item:focus,
+.navbar-toggler:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Mejora de contraste para accesibilidad */
+@media (prefers-contrast: high) {
+    .nav-link {
+        border: 1px solid var(--text-light);
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        border-color: var(--secondary-color);
+    }
+}
+
+/* Modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dropdown-bg: #2c3e50;
+        --text-dark: #ecf0f1;
+    }
+}
+
+/* Animación de carga del menú */
+.navbar {
+    animation: slideInDown 0.5s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para iconos del menú */
+.nav-link i,
+.dropdown-item i {
+    transition: var(--transition);
+}
+
+.nav-link:hover i,
+.dropdown-item:hover i {
+    transform: scale(1.2);
+}
+
+/* Separador visual entre secciones del menú */
+.navbar-nav .nav-item:not(:last-child) {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav .nav-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 20px;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}

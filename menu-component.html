@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente de Menú - Cerradura Smart RFID-BT</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS del Menú Mejorado -->
+    <link rel="stylesheet" href="CSS/menu.css">
+</head>
+<body>
+
+<!-- ============================================
+     COMPONENTE DE MENÚ DE NAVEGACIÓN
+     Copia este código en tus páginas HTML
+     ============================================ -->
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Logo y Nombre del Proyecto -->
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-shield-lock"></i>
+                <span>Cerradura Smart RFID-BT</span>
+            </a>
+
+            <!-- Botón para menú móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <!-- Menú principal (izquierda) -->
+                <ul class="navbar-nav me-auto">
+                    <!-- Inicio -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+
+                    <!-- Avances -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="avanze.html">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span>Avances</span>
+                        </a>
+                    </li>
+
+                    <!-- Información (Dropdown) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <span>Información</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="index.html#Introducción">
+                                    <i class="bi bi-book"></i>
+                                    Introducción
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html#Justificación">
+                                    <i class="bi bi-lightbulb"></i>
+                                    Justificación
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html#Objetivos">
+                                    <i class="bi bi-bullseye"></i>
+                                    Objetivos
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="index.html#caracteristicas">
+                                    <i class="bi bi-star"></i>
+                                    Características
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html#materiales">
+                                    <i class="bi bi-tools"></i>
+                                    Materiales
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html#lenguajes">
+                                    <i class="bi bi-code-slash"></i>
+                                    Lenguajes
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html#funcionamiento">
+                                    <i class="bi bi-gear"></i>
+                                    Funcionamiento
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Documentación -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentacion_tecnica.md" target="_blank">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>Documentación</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Menú secundario (derecha) -->
+                <ul class="navbar-nav">
+                    <!-- Administración -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html">
+                            <i class="bi bi-gear-fill"></i>
+                            <span>Administración</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb opcional (descomenta si lo necesitas) -->
+    <!--
+    <div class="breadcrumb-nav">
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Página Actual</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    -->
+</header>
+
+<!-- ============================================
+     FIN DEL COMPONENTE DE MENÚ
+     ============================================ -->
+
+<!-- Contenido de ejemplo -->
+<main class="container my-5">
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading"><i class="bi bi-info-circle"></i> Componente de Menú</h4>
+        <p>Este es el componente de menú mejorado para tu proyecto. Copia el código del <code>&lt;header&gt;</code> y pégalo en tus páginas HTML.</p>
+        <hr>
+        <p class="mb-0"><strong>Características:</strong></p>
+        <ul>
+            <li>✅ Diseño moderno y responsivo</li>
+            <li>✅ Animaciones suaves</li>
+            <li>✅ Menú desplegable para información</li>
+            <li>✅ Indicador de página activa</li>
+            <li>✅ Compatible con móviles</li>
+            <li>✅ Accesible (navegación por teclado)</li>
+            <li>✅ Smooth scroll para enlaces internos</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="bi bi-code-square"></i> Archivos Generados</h5>
+        </div>
+        <div class="card-body">
+            <h6>1. CSS/menu.css</h6>
+            <p>Archivo de estilos para el menú con animaciones y efectos modernos.</p>
+            
+            <h6>2. Javascript/menu.js</h6>
+            <p>Script con funcionalidades avanzadas:</p>
+            <ul>
+                <li>Efecto de scroll en el navbar</li>
+                <li>Cierre automático del menú móvil</li>
+                <li>Marcado de página activa</li>
+                <li>Smooth scroll para enlaces internos</li>
+                <li>Animaciones de dropdown</li>
+                <li>Navegación por teclado</li>
+                <li>Y más...</li>
+            </ul>
+            
+            <h6>3. menu-component.html</h6>
+            <p>Este archivo con el componente completo del menú listo para copiar.</p>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> Instrucciones de Uso</h5>
+        </div>
+        <div class="card-body">
+            <ol>
+                <li>
+                    <strong>Agregar los archivos CSS y JS a tus páginas:</strong>
+                    <pre class="bg-light p-3 rounded"><code>&lt;!-- En el &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="CSS/menu.css"&gt;
+
+&lt;!-- Antes de cerrar &lt;/body&gt; --&gt;
+&lt;script src="Javascript/menu.js"&gt;&lt;/script&gt;</code></pre>
+                </li>
+                
+                <li>
+                    <strong>Reemplazar el &lt;header&gt; existente:</strong>
+                    <p>Copia el código del <code>&lt;header&gt;</code> de este archivo y reemplázalo en:</p>
+                    <ul>
+                        <li>index.html</li>
+                        <li>avanze.html</li>
+                        <li>inicio.html</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>Verificar que Bootstrap esté incluido:</strong>
+                    <p>Asegúrate de que tus páginas tengan Bootstrap 5.3.3 y Bootstrap Icons.</p>
+                </li>
+                
+                <li>
+                    <strong>Probar el menú:</strong>
+                    <p>Abre tus páginas en el navegador y verifica que el menú funcione correctamente.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header bg-warning">
+            <h5 class="mb-0"><i class="bi bi-palette"></i> Personalización</h5>
+        </div>
+        <div class="card-body">
+            <p>Puedes personalizar los colores editando las variables CSS en <code>CSS/menu.css</code>:</p>
+            <pre class="bg-light p-3 rounded"><code>:root {
+    --primary-color: #2c3e50;      /* Color principal */
+    --secondary-color: #3498db;    /* Color secundario */
+    --accent-color: #e74c3c;       /* Color de acento */
+    --text-light: #ecf0f1;         /* Texto claro */
+    --text-dark: #2c3e50;          /* Texto oscuro */
+    --hover-bg: #34495e;           /* Fondo al pasar el mouse */
+}</code></pre>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2024 Cerradura Smart RFID-BT. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script del Menú -->
+<script src="Javascript/menu.js"></script>
+
+</body>
+</html>
